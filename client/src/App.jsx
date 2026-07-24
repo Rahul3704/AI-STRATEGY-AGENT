@@ -15,12 +15,9 @@ function App() {
     setLoading(true);
 
     try {
-      const res = await axios.post(
-        `${import.meta.env.VITE_API_URL}/api/generate`,
-        {
-          mission,
-        },
-      );
+      const res = await axios.post(`${import.meta.env.VITE_API_URL}/api/ai`, {
+        mission,
+      });
 
       setResult(res.data);
     } catch (err) {
